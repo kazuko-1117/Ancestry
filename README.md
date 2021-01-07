@@ -36,6 +36,7 @@ https://gyazo.com/8d4cf8316284eb356cdee1e4cfd26eef
 # Association
 - has_many :credits, dependent: :destroy
 - has_many :favorites, dependent: :destroy
+- has_many :orders, dependent: :destroy
 - has_many :items, through:  :favorites
 - has_one :ship_address, dependent: :destroy
 
@@ -95,14 +96,13 @@ https://gyazo.com/8d4cf8316284eb356cdee1e4cfd26eef
 |brand|string|null: false|
 |category|references|null: false, foreign_key: true|
 |size|string|null: false|
+|color|string|null: false|
 |sale|integer|null: false|
 
 # Association
-- has_many :orders,
 - has_many :images, dependent: :destroy
 - has_many :orders, through:  :order_histories
 - has_many :users, through:  :favorites
-- has_one :color
 - belongs_to :category
 
 
@@ -111,17 +111,13 @@ https://gyazo.com/8d4cf8316284eb356cdee1e4cfd26eef
 |------|----|-------|
 |delivery_method|string|null: false|
 |postage|string|null: false|
-|name|string|null: false|
-|introduction|text|null: false|
-|price|integer|null: false|
-|brand|string|null: false|
-|credit|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
 |ship_address|references|null: false, foreign_key: true|
 |total_price|integer|null: false|
 
 # Association
 - has_many :items, through:  :order_histories
+- belongs_to :user
 
 
 ## order_histories テーブル
@@ -160,12 +156,3 @@ https://gyazo.com/8d4cf8316284eb356cdee1e4cfd26eef
 - belongs_to :item
 
 
-
-## colorsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|item|references|null: false, foreign_key: true|
-
-# Association
-- has_one :item
