@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  margin: 0;
+}
+
+.CommonHeader {
+  // box-shadow: -1px 0 5px 1px #999; 
+  background-color: antiquewhite;
+  // height: 100px;
+  
+}
+.HeaderInner {
+
+  // background-color: antiquewhite;
+  // height: 100px;
+  &__Aborve {
+    margin-right: 5%;
+    margin-left: 5%;
+    height: 60px;
+    display: flex;
+    // background-color: brown;
+    &--Laungage {
+      width: 260px;
+      background-color: green;
+
+      
+    }
+    &--Title {
+      width: 260px;
+      background-color:orange;
+    }
+    &--Seach {
+      width: 260px;
+      background-color:tan;
+    }
+  }
+  &__Bottom {
+    margin-right: 5%;
+    margin-left: 5%;
+    height: 60px;
+    background-color:gold;
+  }
+}
