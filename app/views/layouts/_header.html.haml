@@ -8,11 +8,11 @@
     %a.title
      Ancestry
    .HeaderInner__Aborve--Seach 
-    = form_with url: '#',class: 'HeaderInner__TextBox' ,local: true do |f|
-    .HeaderInner__Input
-     = f.text_field :keyword, placeholder: 'キーワードから探す',class: 'HeaderInner__TextField' 
-    %button{type: "submit", class:'HeaderInner__Btn'}
-    = image_tag 'icon/icon-search 1.png',size: '20x20', alt: '虫眼鏡の写真', class: 'HeaderInner__Submit'
+    = form_with url: '#',class: 'HeaderInner__SeachBox' ,local: true do |f|
+     .HeaderInner__Input
+      = f.text_field :keyword, placeholder: '検索',class: 'HeaderInner__TextField' 
+      %button{type: "submit", class:'HeaderInner__Btn'}
+       = image_tag 'icon/icon-search 1.png',size: '20x20', alt: '虫眼鏡の写真', class: 'HeaderInner__Submit'
      
       
 
